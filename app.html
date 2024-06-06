@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+  {{ people[0].name }}
+</div>
+
+<script type="module">
+  const { createApp } = Vue
+
+  const API_URL = `https://swapi.dev/api/people/`
+
+  createApp({
+    data: () => ({
+      people: []
+    }),
+    methods: {
+      async getPeople () {
+        const response = await fetch(API_URL)
+        const data = await response.json()
+        
+        this.people = data.results
+      }
+    },
+    created() {
+      this.getPeople()
+    }
+  }).mount('#app')
+</script>
