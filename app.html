@@ -1,7 +1,19 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
-  {{ people[0].name }}
+  <h1>Personagens de Star Wars</h1>
+
+  <div v-for="person in people">
+    {{ person.name }}
+    <ul>
+      <li>Altura: {{ person.height }}</li>
+      <li>Peso: {{ person.mass }}</li>
+      <li>Cor do cabelo: {{ person.hair_color }}</li>
+      <li>Cor de pele: {{ person.skin_color }}</li>
+      <li>Cor dos olhos: {{ person.eye_color }}</li>
+      <li>Ano de nascimento: {{ person.birth_year }}</li>
+    </ul>
+  </div>
 </div>
 
 <script type="module">
