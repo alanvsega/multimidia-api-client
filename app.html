@@ -4,16 +4,46 @@
 <div id="app">
   <h1 class="title">Personagens de Star Wars</h1>
 
+  <h4 class="type">Tabela</h4>
+
+  <ul class="row">
+    <li class="col-m header">Nome:</li>
+    <li class="col-l header">Altura:</li>
+    <li class="col-l header">Peso:</li>
+    <li class="col-m header">Cor do cabelo:</li>
+    <li class="col-l header">Cor de pele:</li>
+    <li class="col-m header">Cor dos olhos:</li>
+    <li class="col-l header">Ano:</li>
+  </ul>
+
   <div v-for="person in people">
     <ul class="row">
-      <li><b>{{ person.name }}</b></li>
-      <li>Altura: {{ person.height }}</li>
-      <li>Peso: {{ person.mass }}</li>
-      <li>Cor do cabelo: {{ person.hair_color }}</li>
-      <li>Cor de pele: {{ person.skin_color }}</li>
-      <li>Cor dos olhos: {{ person.eye_color }}</li>
-      <li>Ano de nascimento: {{ person.birth_year }}</li>
+      <li class="col-m">{{ person.name }}</li>
+      <li class="col-l">{{ person.height }}</li>
+      <li class="col-l">{{ person.mass }}</li>
+      <li class="col-m">{{ person.hair_color }}</li>
+      <li class="col-l">{{ person.skin_color }}</li>
+      <li class="col-m">{{ person.eye_color }}</li>
+      <li class="col-l">{{ person.birth_year }}</li>
     </ul>
+  </div>
+
+  <h4 class="type">Cartões</h4>
+
+  <div class="container">
+    <div v-for="person in people">
+      <div class="card">
+        <p class="card-title">{{ person.name }}</p>
+        <ul class="card-description">
+          <li>Altura: {{ person.height }}</li>
+          <li>Peso: {{ person.mass }}</li>
+          <li>Cor do cabelo: {{ person.hair_color }}</li>
+          <li>Cor de pele: {{ person.skin_color }}</li>
+          <li>Cor dos olhos: {{ person.eye_color }}</li>
+          <li>Ano: {{ person.birth_year }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
