@@ -1,9 +1,16 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
 body {
   background-color: black;
 }
 
 .title {
   color: #FFE807;
+  font-family: 'Star Wars', sans-serif;
+  font-size: 40px;
+  font-weight: normal;
+  padding: 20px;
+  text-align: center;
 }
 
 .type {
