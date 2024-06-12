@@ -17,15 +17,7 @@
   </ul>
 
   <div v-for="person in people">
-    <ul class="row">
-      <li class="col-m">{{ person.name }}</li>
-      <li class="col-l">{{ person.height }}</li>
-      <li class="col-l">{{ person.mass }}</li>
-      <li class="col-m">{{ person.hair_color }}</li>
-      <li class="col-l">{{ person.skin_color }}</li>
-      <li class="col-m">{{ person.eye_color }}</li>
-      <li class="col-l">{{ person.birth_year }}</li>
-    </ul>
+    <row :person="person"></row>
   </div>
 
   <h4 class="type">Cartões</h4>
@@ -41,6 +33,7 @@
   const { createApp } = Vue
 
   import Card from './components/card.js'
+  import Row from  './components/row.js'
 
   const API_URL = `https://swapi.dev/api/people/`
 
@@ -60,7 +53,8 @@
       this.getPeople()
     },
     components: {
-      Card
+      Card,
+      Row
     }
   }).mount('#app')
 </script>
